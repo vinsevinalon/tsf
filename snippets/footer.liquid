@@ -1,0 +1,62 @@
+<div id="pagefooter">
+    {% if settings.footer_ad_enable %}
+    {% if settings.footer_ad_show == 'all' or template == 'index' %}
+    <div class="image-links cf">
+        {% unless settings.en_full_width_footer %}<div class="container">{% endunless %}
+        
+        {% for i in (1..3) %}
+            {% unless settings[set_index] == empty %}
+            {% assign ad_url_index = 'ad_' | append: i | append: '_src' %}
+            {% assign ad_title_index = 'ad_' | append: i | append: '_title' %}
+            
+            <div class="image-link block-{{ forloop.index }}">
+                {% if settings[ad_url_index] == empty %}
+                    <img src="{{ 'ad_' | append: i | append: '_img.jpg' | asset_url }}" alt="{{ settings[ad_title_index] }}" />
+                {% else %}
+                    <a href="{{ settings[ad_url_index] }}" title="{{ settings[ad_title_index] }}"><img src="{{ 'ad_' | append: i | append: '_img.jpg' | asset_url }}" alt="{{ settings[ad_title_index] }}" /></a>
+                {% endif %}
+            </div>
+            {% endunless %}
+        {% endfor %}
+        
+        {% unless settings.en_full_width_footer %}</div>{% endunless %}
+    </div><!-- /.image-links -->
+    {% endif %}
+    {% endif %}
+    
+    {% if linklists.footer.links.size > 0 %}
+    <div class="nav-row">
+        {% include 'main-navigation' with 'footer' %}
+    </div><!-- /.nav-row -->
+    {% endif %}
+    
+  <div class="lower cf">
+    {% if settings.soc_icons_in_footer %}
+    {% include 'social-icons' %}
+    {% endif %}
+    
+    <div class="interact">
+      {% if settings.footer_signup_show %}
+      {% include 'signup-form' %}
+      {% endif %}
+    </div><!-- /.interact -->
+
+    <div class="copyright">
+      {% if settings.logo_small_show_foot %}
+      <img src="{{ 'logo_small.png' | asset_url }}" alt="{{ shop.name }}" />
+      {% endif %}
+      <span class="copy">&copy; {{ "now" | date: "%Y" }} {{ shop.name | link_to: '/' }}.</span>
+
+      {{ 'layout.footer.theme_by_html' | t }}
+
+      {{ powered_by_link }}
+    </div><!-- /.copyright -->
+
+    <div class="payment-methods">
+      {% for type in shop.enabled_payment_types %}
+      <img src="{{ type | payment_type_img_url }}" />
+      {% endfor %}
+    </div>
+  </div>
+    
+</div><!-- /#pagefooter -->

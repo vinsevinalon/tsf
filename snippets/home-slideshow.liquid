@@ -1,0 +1,43 @@
+<div class="slideshow-row">
+  {% unless settings.en_full_width_homepage %}<div class="container">{% endunless %}
+  <div class="slideshow auto-play scaled-text-base">
+    {% for i in (1..5) %}
+    {% assign slide_show = 'slide_' | append: i | append: '_show' %}
+
+    {% if settings[slide_show] %}
+    {% assign slide_img_url = 'slide_' | append: i | append: '.jpg' %}
+    {% assign slide_alt_text = 'slide_' | append: i | append: '_alt_txt' %}
+    {% assign slide_link_url = 'slide_' | append: i | append: '_url' %}
+    {% assign slide_text_show = 'slide_' | append: i | append: '_txt_show' %}
+    {% assign slide_text = 'slide_' | append: i | append: '_txt' %}
+    {% assign slide_text_pos = 'slide_' | append: i | append: '_txt_pos' %}
+    <div class="slide">
+      {% if settings[slide_link_url] != '' %}<a href="{{ settings[slide_link_url] }}">{% endif %}
+      <img src="{{ slide_img_url | asset_url }}" alt="{{ settings[slide_alt_text] | escape }}" />
+      {% if settings[slide_text_show] %}
+      <div class="overlay-text overlay-{{ settings[slide_text_pos] }}">
+        <div class="inner">
+          <h1 class="text">
+            <span class="scaled-text">
+              {% if settings[slide_text] == blank %}
+              {{ 'home_page.onboarding.slide_overlay' | t }}
+              {% else %}
+              {{ settings[slide_text] }}
+              {% endif %}
+            </span>
+          </h1>
+        </div>
+      </div>
+      {% endif %}
+      {% if settings[slide_link_url] != '' %}</a>{% endif %}
+    </div>
+    {% endif %}
+    {% endfor %}
+  </div>
+  {% unless settings.en_full_width_homepage %}</div>{% endunless %}
+</div>
+
+{%comment%}
+   Video Background customisation 
+{%endcomment%}
+<div id="cbb-home-page-video"></div>

@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html class="no-js">
+<head>
+  <!-- Symmetry 2.0.9 -->
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+  
+  <title>
+    {{ page_title }}{% if current_tags %}{% assign meta_tags = current_tags | join: ', ' %} &ndash; {{ 'general.meta.tags' | t: tags: meta_tags }}{% endif %}{% if current_page != 1 %} &ndash; {{ 'general.meta.page' | t: page: current_page }}{% endif %}{% unless page_title contains shop.name %} &ndash; {{ shop.name }}{% endunless %}
+  </title>
+  {% if page_description %}
+  <meta name="description" content="{{ page_description | escape }}" />
+  {% endif %}
+  <link rel="canonical" href="{{ canonical_url }}" />
+  
+  {% include 'opengraph-tags' %}
+  {% include 'twitter-card' %}
+  
+  {% include 'google-fonts-import' %}
+  
+  {{ 'styles.scss.css' | asset_url | stylesheet_tag }}
+  
+  {% if template contains 'customers' %}
+    {{ "shopify_common.js" | shopify_asset_url | script_tag }}
+    {{ "customer_area.js"  | shopify_asset_url | script_tag }}
+  {% endif %}
+  
+  {{ 'option_selection.js' | shopify_asset_url | script_tag }}
+  {{ '//ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js' | script_tag }}
+  {{ 'api.jquery.js' | shopify_asset_url | script_tag }}
+<script>
+  Shopify.money_format = {{ shop.money_format | json }};
+  window.productJSON = [];
+  document.documentElement.className = document.documentElement.className.replace('no-js', '');
+</script>
+
+    {{ content_for_header }}
+</head>
+
+<body class="template-{{ template | split: '.' | first }}">
+  <div id="pageheader">
+    
+    {% capture logo_html %}
+    <div class="logo">
+      <a href="/" title="{{ shop.name }}">
+        {% if settings.use_logo_img %}
+        <img class="logoimage" src="{{ 'logo.png' | asset_url }}" alt="{{ shop.name }}" />
+        {% else %}
+        <span class="logotext">{{ shop.name }}</span>
+        {% endif %}
+      </a>
+    </div><!-- /#logo -->
+    {% endcapture %}
+
+    <div id="mobile-header" class="cf">
+      <button class="notabutton mobile-nav-toggle"><span></span><span></span><span></span></button>
+      {{ logo_html }}
+      <a href="/{% if template != 'cart' %}cart{% else %}checkout{% endif %}" class="cart-count {% if settings.use_btn_style_cart_link %}button{% endif %}">
+        <i class="icon-cart"></i> ({{ cart.item_count }})
+      </a>
+    </div>
+    
+        <div class="logo-area logo-pos-{{ settings.logo_pos }} cf">
+            
+          {% unless settings.logo_pos == 'below' %}<div class="container">{{ logo_html }}</div>{% endunless %}
+            
+          <div class="util-area">
+            <div class="search-box elegant-input">
+              {% if settings.header_signup_show %}
+              <div class="signup-reveal-area">
+                <a class="signup-reveal" href="#">{{ 'layout.header.signup' | t }}</a>
+                {% if settings.header_signup_show %}{% include 'signup-form' %}{% endif %}
+              </div>
+              {% endif %}
+
+              <form class="search-form" action="/search" method="get">
+                <i class="icon-mag"></i>
+                <input type="text" name="q" placeholder="{{ 'layout.header.search' | t }}"/>
+                <input type="submit" value="&rarr;" />
+              </form>
+            </div>
+
+            <div class="utils">
+              {% if settings.soc_icons_in_header %}
+              {% include 'social-icons' %}
+              {% endif %}
+
+              <div class="cart-summary">
+                <a href="/{% if template != 'cart' %}cart{% else %}checkout{% endif %}" class="cart-count {% if settings.use_btn_style_cart_link %}button{% endif %}">
+                  {{ 'layout.header.cart' | t }} ({{ cart.item_count }})
+                </a>
+
+                {% include 'currencies-switcher' %}
+              </div>
+            </div><!-- /.utils -->
+          </div><!-- /.util-area -->
+
+          {% if settings.logo_pos == 'below' %}<div class="container">{{ logo_html }}</div>{% endif %}
+            
+        </div><!-- /.logo-area -->
+    </div><!-- /#pageheader -->
+    
+    {% capture extra_navigation_items %}
+  	<div class="mobile-social">{% include 'social-icons' %}</div>
+    {% if shop.customer_accounts_enabled %}
+        <ul>
+            <li class="account-links">
+                {% if customer %}
+                    <span class="your-acct"><a href="/account">{{ 'layout.customer.account' | t }}</a></span>
+              		<span class="slash">/</span>
+                    <span class="logout">{{ 'layout.customer.log_out' | t | customer_logout_link }}</span>
+                {% else %}
+                    {% if settings.nav_show_reg %}
+                        <span class="register">{{ 'layout.customer.register' | t | customer_register_link }}</span> <span class="slash">/</span>
+                    {% endif %}
+                    <span class="login">{{ 'layout.customer.log_in' | t | customer_login_link }}</span>
+                {% endif %}
+            </li>
+        </ul>
+    {% endif %}
+    {% endcapture %}
+    
+    <div id="main-nav" class="nav-row">
+      <div class="mobile-features">
+        <form class="mobile-search" action="/search" method="get">
+          <i></i>
+          <input type="text" name="q" placeholder="{{ 'layout.header.search' | t }}"/>
+          <button type="submit" class="notabutton"><i class="icon-mag"></i></button>
+        </form>
+      </div>
+      {% include 'main-navigation' with 'main-menu' %}
+      <div class="mobile-currency-switcher">{% include 'currencies-switcher' %}</div>
+    </div><!-- /#main-nav -->
+    
+    <div id="content">
+      {% if settings.head_not_home_only == false or template == 'index' %}
+        {% assign num_messages = 0 %}
+
+        {% for i in (1..3) %}
+          {% capture show_idx %}head_not_{{i}}_show{% endcapture %}
+
+          {% if settings[show_idx] %}
+            {% assign num_messages = num_messages | plus: 1 %}
+            {% assign line_1_idx = 'head_not_' | append: i | append: '_1' %}
+            {% assign line_2_idx = 'head_not_' | append: i | append: '_2' %}
+            {% assign msg_url_idx = 'head_not_' | append: i | append: '_url' %}
+            {% assign msg_url = settings[msg_url_idx] %}
+            {% capture store_messages_html %}
+            {{ store_messages_html }}
+            <div class="message message-{{i}}">
+              {% unless msg_url == empty %}<a href="{{ msg_url }}">{% endunless %}
+              {% if settings[line_1_idx] == blank %}
+              <h6 class="title">{{ 'layout.store_messages.default_title' | t }}</h6>
+              <span class="tagline">{{ 'layout.store_messages.default_subtext' | t }}</span>
+              {% else %}
+              <h6 class="title">{{ settings[line_1_idx] }}</h6>
+              <span class="tagline">{{ settings[line_2_idx] }}</span>
+              {% endif %}
+              {% unless msg_url == empty %}</a>{% endunless %}
+              {% unless forloop.first %}<div class="fluff"></div>{% endunless %}
+            </div>
+            {% endcapture %}
+          {% endif %}
+        {% endfor %}
+      
+        {% if num_messages > 0 %}
+        <div id="store-messages" class="messages-{{ num_messages }}">
+          <div class="container cf">
+            {{ store_messages_html }}
+          </div>
+        </div><!-- /#store-messages -->
+        {% endif %}
+      {% endif %}
+      
+      {% if settings.head_not_mob_show %}
+      <div id="store-messages-mobile">
+        <div class="container">{{ settings.head_not_mob_text }}</div>
+      </div>
+      {% endif %}
+        
+        
+      {% comment %} Some templates should not be contained in a central column {% endcomment %}
+      {% if template == 'index' or template contains 'collection' or template contains 'product' or template contains 'blog' or template contains 'article' or template contains 'page' or template contains 'search' %}
+        {{ content_for_layout }}
+      {% else %}
+        <div class="container cf">
+          {{ content_for_layout }}
+        </div><!-- /.container -->
+      {% endif %}
+    </div><!-- /#content -->
+    
+  {% include 'footer' %}
+  
+  {% comment %} Theme Javascript {% endcomment %}
+  {{ 'jquery.imagesloaded.js' | asset_url | script_tag }}
+  {{ 'slick.min.js' | asset_url | script_tag }}
+  {{ 'jquery.fancybox-1.3.4.pack.js' | asset_url | script_tag }}
+  {{ 'main.js' | asset_url | script_tag }}
+  
+  {% include 'currencies' %}
+  
+
+
+  
+
+</body>
+</html>

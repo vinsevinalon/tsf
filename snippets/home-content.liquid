@@ -1,0 +1,24 @@
+<div class="container padded-row {% if settings.home_welcome_image_show %}layout-content-with-image-{{ settings.home_welcome_side }}{% endif %} cf">
+    {% if settings.home_welcome_image_show and settings.home_welcome_side == 'left' %}
+    <div class="image-cont">
+        {% if settings.home_welcome_side_type == 'img' %}
+        <img src="{{ 'home_welcome_image.jpg' | asset_url }}" alt="{{ pages[settings.home_welcome_page].title }}" />
+        {% else %}
+        {{ settings.home_welcome_side_html }}
+        {% endif %}
+    </div>{% endif %}<div class="content user-content">
+  
+        {% if settings.show_home_welcome_title %}
+        <h1 class="majortitle in-content">{{ pages[settings.home_welcome_page].title }}</h1>
+        {% endif %}
+        {{ pages[settings.home_welcome_page].content }}
+  
+    </div>{% if settings.home_welcome_image_show and settings.home_welcome_side == 'right' %}<div class="image-cont">
+        {% if settings.home_welcome_side_type == 'img' %}
+        <img src="{{ 'home_welcome_image.jpg' | asset_url }}" alt="{{ pages[settings.home_welcome_page].title }}" />
+        {% else %}
+        {{ pages[settings.home_welcome_side_page].content }}
+        {% endif %}
+    </div>
+    {% endif %}
+</div>

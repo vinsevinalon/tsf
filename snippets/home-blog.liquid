@@ -1,0 +1,30 @@
+{% assign slider_blog = blogs[settings.home_blog_hdl] %}
+{% if slider_blog.articles.size > 0 %}
+<!-- Blog slideshow -->
+<div class="container padded-row blog-row">
+  <h1 class="hometitle h4-style align-center"><a href="{{ slider_blog.url }}">{{ slider_blog.title }}</a></h1>
+  <div class="layout cf">
+    {% for article in slider_blog.articles limit: 3 %}
+    <div class="article col-third {% cycle 'blog': 'left', '', 'right' %} spaced-row">
+      {% if article.image and settings.show_article_feat_img_on_home %}
+      <div class="article-image">{{ article.image | img_url: '1024x1024' | img_tag: article.image.alt | link_to: article.url }}</div>
+      {% endif %}
+
+      <h3><a href="{{ article.url }}">{{ article.title }}</a></h3>
+      <div class="user-content">
+        {{ article.excerpt_or_content }}
+      </div>
+      
+      <div class="meta">
+        <span class="iconmeta time">
+          {{ article.published_at | date: format: 'month_date_year' }}
+          <span class="author">{{ 'blogs.article.author' | t: author: article.author }}</span>
+        </span>
+      </div>
+      
+      <div class="continue-reading"><a href="{{ article.url }}">{{ 'blogs.article.read_more_html' | t }}</a></div>
+    </div>
+    {% endfor %}
+  </div>
+</div>
+{% endif %}

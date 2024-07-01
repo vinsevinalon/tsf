@@ -1,0 +1,12 @@
+<div class="social-links">
+  {% assign social_human_titles = 'Facebook,Twitter,Pinterest,Google+,Instagram,Vimeo,YouTube,Flickr,Tumblr,RSS' | split: ',' %}
+  {% assign social_keys = 'facebook,twitter,pinterest,google,instagram,vimeo,youtube,flickr,tumblr,rss' | split: ',' %}
+  <ul>
+    {% for social_key in social_keys %}
+    {% assign url_key = 'soc_' | append: social_key | append: '_url' %}
+    {% if settings[url_key] != empty %}
+    <li class="{{ social_key }}"><a href="{{ settings[url_key] }}" target="_blank" title="{{ social_human_titles[forloop.index0] }}"><i class="icon-{{ social_key }}"><span>{{ social_human_titles[forloop.index0] }}</span></i></a></li>
+    {% endif %}
+    {% endfor %}
+  </ul>
+</div>

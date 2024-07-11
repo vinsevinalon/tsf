@@ -1,0 +1,257 @@
+{% schema %}
+{
+  "name": "Testimonial Slider",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "What Our Clients Say"
+    },
+    {
+      "type": "text",
+      "id": "subtitle",
+      "label": "Subtitle",
+      "default": "Neque, Pulvinar Vestibulum Non Aliquam."
+    }
+  ],
+  "blocks": [
+    {
+      "type": "testimonial",
+      "name": "Testimonial",
+      "settings": [
+        {
+          "type": "textarea",
+          "id": "quote",
+          "label": "Quote",
+          "default": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+        },
+        {
+          "type": "text",
+          "id": "author",
+          "label": "Author Name",
+          "default": "John Doe"
+        },
+        {
+          "type": "image_picker",
+          "id": "author_image",
+          "label": "Author Image"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Testimonial Slider",
+      "blocks": [
+        {
+          "type": "testimonial"
+        },
+        {
+          "type": "testimonial"
+        },
+        {
+          "type": "testimonial"
+        },
+        {
+          "type": "testimonial"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
+
+<div class="testimonial-slider" data-testimonial-slider>
+  <h2 class="testimonial-slider__title">{{ section.settings.title }}</h2>
+  <p class="testimonial-slider__subtitle">{{ section.settings.subtitle }}</p>
+
+  <div class="testimonial-slider__container">
+    <button class="testimonial-slider__nav testimonial-slider__nav--prev" data-slider-prev aria-label="Previous testimonials">&lt;</button>
+    <div class="testimonial-slider__wrapper" data-slider-wrapper>
+      {% for block in section.blocks %}
+        <div class="testimonial-slider__item" {{ block.shopify_attributes }}>
+          <div class="testimonial-slider__stars">
+            ★★★★★
+          </div>
+          <blockquote class="testimonial-slider__quote">
+            {{ block.settings.quote }}
+          </blockquote>
+          <div class="testimonial-slider__author">
+            {% if block.settings.author_image %}
+              <img src="{{ block.settings.author_image | img_url: '100x100', crop: 'center' }}" alt="{{ block.settings.author }}" class="testimonial-slider__author-image">
+            {% else %}
+              <div class="testimonial-slider__author-image testimonial-slider__author-image--placeholder"></div>
+            {% endif %}
+            <p class="testimonial-slider__author-name">{{ block.settings.author }}</p>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+    <button class="testimonial-slider__nav testimonial-slider__nav--next" data-slider-next aria-label="Next testimonials">&gt;</button>
+  </div>
+</div>
+
+{% stylesheet %}
+.testimonial-slider {
+  text-align: center;
+  padding: 40px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.testimonial-slider__title {
+  font-size: 40px; /* Updated from 2.5rem to 40px */
+  margin-bottom: 10px;
+}
+
+.testimonial-slider__subtitle {
+  font-size: 16px; /* Updated from 1.2rem to 16px */
+  color: #777;
+  margin-bottom: 40px;
+}
+
+.testimonial-slider__container {
+  position: relative;
+}
+
+.testimonial-slider__wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.testimonial-slider__item {
+  flex: 0 0 100%;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+@media (min-width: 768px) {
+  .testimonial-slider__wrapper {
+    justify-content: space-between;
+  }
+  
+  .testimonial-slider__item {
+    flex: 0 0 calc(50% - 10px);
+  }
+}
+
+.testimonial-slider__stars {
+  color: #ffd700;
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+
+.testimonial-slider__quote {
+  font-style: italic;
+  margin-bottom: 20px;
+}
+
+.testimonial-slider__author {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.testimonial-slider__author-image {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin-right: 10px;
+  object-fit: cover;
+}
+
+.testimonial-slider__author-image--placeholder {
+  background-color: #ddd;
+}
+
+.testimonial-slider__author-name {
+  font-weight: bold;
+}
+
+.testimonial-slider__nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  font-size: 2rem;
+  cursor: pointer;
+  padding: 0 10px;
+  color: #333;
+}
+
+.testimonial-slider__nav--prev {
+  left: -20px;
+}
+
+.testimonial-slider__nav--next {
+  right: -20px;
+}
+{% endstylesheet %}
+
+{% javascript %}
+class TestimonialSlider {
+  constructor(element) {
+    this.slider = element;
+    this.wrapper = this.slider.querySelector('[data-slider-wrapper]');
+    this.slides = Array.from(this.wrapper.children);
+    this.prevButton = this.slider.querySelector('[data-slider-prev]');
+    this.nextButton = this.slider.querySelector('[data-slider-next]');
+    this.slidesToShow = window.innerWidth >= 768 ? 2 : 1;
+    this.currentIndex = 0;
+
+    this.init();
+  }
+
+  init() {
+    this.updateSliderView();
+    this.prevButton.addEventListener('click', () => this.slide('prev'));
+    this.nextButton.addEventListener('click', () => this.slide('next'));
+    window.addEventListener('resize', () => this.handleResize());
+  }
+
+  slide(direction) {
+    if (direction === 'next') {
+      this.currentIndex = (this.currentIndex + this.slidesToShow) % this.slides.length;
+    } else {
+      this.currentIndex = (this.currentIndex - this.slidesToShow + this.slides.length) % this.slides.length;
+    }
+    this.updateSliderView();
+  }
+
+  updateSliderView() {
+    this.slides.forEach((slide, index) => {
+      if (index >= this.currentIndex && index < this.currentIndex + this.slidesToShow) {
+        slide.style.display = 'block';
+      } else {
+        slide.style.display = 'none';
+      }
+    });
+  }
+
+  handleResize() {
+    const newSlidesToShow = window.innerWidth >= 768 ? 2 : 1;
+    if (newSlidesToShow !== this.slidesToShow) {
+      this.slidesToShow = newSlidesToShow;
+      this.currentIndex = 0;
+      this.updateSliderView();
+    }
+  }
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  const sliders = document.querySelectorAll('[data-testimonial-slider]');
+  sliders.forEach(slider => new TestimonialSlider(slider));
+});
+
+// For Shopify Theme Editor
+if (Shopify.designMode) {
+  document.addEventListener('shopify:section:load', (event) => {
+    const slider = event.target.querySelector('[data-testimonial-slider]');
+    if (slider) {
+      new TestimonialSlider(slider);
+    }
+  });
+}
+{% endjavascript %}

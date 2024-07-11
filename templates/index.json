@@ -1,0 +1,316 @@
+{
+  "sections": {
+    "image_banner": {
+      "type": "image-banner",
+      "blocks": {
+        "heading": {
+          "type": "heading",
+          "settings": {
+            "heading": "<strong>Performance Athletic Socks<\/strong>",
+            "heading_size": "h0"
+          }
+        },
+        "text_iJ7Mqq": {
+          "type": "text",
+          "settings": {
+            "text": "At lacus vitae nulla sagittis scelerisque nisl. Pellentesque duis cursus vestibulum, facilisi ac, sed faucibus.",
+            "text_style": "body"
+          }
+        },
+        "button": {
+          "type": "buttons",
+          "settings": {
+            "button_label_1": "START YOUR PROJECT >",
+            "button_link_1": "shopify:\/\/collections\/all",
+            "button_style_secondary_1": true,
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_secondary_2": false
+          }
+        }
+      },
+      "block_order": [
+        "heading",
+        "text_iJ7Mqq",
+        "button"
+      ],
+      "settings": {
+        "image": "shopify:\/\/shop_images\/Nate_Banks_003_raderproductions.jpg",
+        "image_overlay_opacity": 40,
+        "image_height": "large",
+        "desktop_content_position": "bottom-center",
+        "show_text_box": false,
+        "desktop_content_alignment": "center",
+        "color_scheme": "scheme-3",
+        "image_behavior": "none",
+        "mobile_content_alignment": "center",
+        "stack_images_on_mobile": false,
+        "show_text_below": false
+      }
+    },
+    "featured_collection_RbcdHD": {
+      "type": "featured-collection",
+      "settings": {
+        "title": "<strong>OUR PRODUCTS<\/strong>",
+        "heading_size": "h1",
+        "description": "",
+        "show_description": false,
+        "description_style": "body",
+        "collection": "",
+        "products_to_show": 4,
+        "columns_desktop": 4,
+        "full_width": false,
+        "show_view_all": true,
+        "view_all_style": "solid",
+        "enable_desktop_slider": false,
+        "color_scheme": "",
+        "image_ratio": "square",
+        "image_shape": "default",
+        "show_secondary_image": false,
+        "show_vendor": false,
+        "show_rating": false,
+        "quick_add": "none",
+        "columns_mobile": "2",
+        "swipe_on_mobile": false,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "multirow_fYUxWd": {
+      "type": "multirow",
+      "blocks": {
+        "row_rmKf6p": {
+          "type": "row",
+          "settings": {
+            "caption": "",
+            "heading": "<strong>ORDER CUSTOM SOCKS IN BULK<\/strong>",
+            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>",
+            "button_label": "Button label",
+            "button_link": ""
+          }
+        },
+        "row_8zTPKw": {
+          "type": "row",
+          "settings": {
+            "caption": "",
+            "heading": "<strong>COMPLETELY CUSTOMIZABLE<\/strong>",
+            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>",
+            "button_label": "Button label",
+            "button_link": ""
+          }
+        },
+        "row_y4yWbE": {
+          "type": "row",
+          "settings": {
+            "caption": "",
+            "heading": "<strong>PREMIUM USA-MADE QUALITY<\/strong>",
+            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>",
+            "button_label": "Button label",
+            "button_link": ""
+          }
+        },
+        "row_WXFLKH": {
+          "type": "row",
+          "settings": {
+            "caption": "",
+            "heading": "<strong>WHITE GLOVE SERVICE<\/strong>",
+            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>",
+            "button_label": "Button label",
+            "button_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "row_rmKf6p",
+        "row_8zTPKw",
+        "row_y4yWbE",
+        "row_WXFLKH"
+      ],
+      "settings": {
+        "image_height": "medium",
+        "desktop_image_width": "medium",
+        "heading_size": "h1",
+        "text_style": "body",
+        "button_style": "secondary",
+        "desktop_content_position": "middle",
+        "desktop_content_alignment": "left",
+        "image_layout": "alternate-left",
+        "section_color_scheme": "",
+        "row_color_scheme": "",
+        "mobile_content_alignment": "left",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "collapsible_content_TNjJPe": {
+      "type": "collapsible-content",
+      "blocks": {
+        "collapsible_row_NwpQb7": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Collapsible row",
+            "icon": "check_mark",
+            "row_content": "",
+            "page": ""
+          }
+        },
+        "collapsible_row_QzrFqb": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Collapsible row",
+            "icon": "check_mark",
+            "row_content": "",
+            "page": ""
+          }
+        },
+        "collapsible_row_ALcHwh": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Collapsible row",
+            "icon": "check_mark",
+            "row_content": "",
+            "page": ""
+          }
+        },
+        "collapsible_row_AwAdWX": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Collapsible row",
+            "icon": "check_mark",
+            "row_content": "",
+            "page": ""
+          }
+        }
+      },
+      "block_order": [
+        "collapsible_row_NwpQb7",
+        "collapsible_row_QzrFqb",
+        "collapsible_row_ALcHwh",
+        "collapsible_row_AwAdWX"
+      ],
+      "settings": {
+        "caption": "",
+        "heading": "<strong>Collapsible content<\/strong>",
+        "heading_size": "h1",
+        "heading_alignment": "center",
+        "layout": "none",
+        "color_scheme": "",
+        "container_color_scheme": "",
+        "open_first_collapsible_row": false,
+        "image_ratio": "adapt",
+        "desktop_layout": "image_second",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "rich_text_PGzhdD": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_Ck8aaC": {
+          "type": "heading",
+          "settings": {
+            "heading": "<strong>READY TO GET STARTED?<\/strong>",
+            "heading_size": "h1"
+          }
+        },
+        "text_mPmyxM": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Answer a few simple questions and we’ll get you going.<\/p>"
+          }
+        },
+        "button_kMghCY": {
+          "type": "button",
+          "settings": {
+            "button_label": "Start Your Project",
+            "button_link": "",
+            "button_style_secondary": false,
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_secondary_2": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_Ck8aaC",
+        "text_mPmyxM",
+        "button_kMghCY"
+      ],
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
+    },
+    "testimonial_section_piMzLk": {
+      "type": "testimonial-section",
+      "blocks": {
+        "testimonial_UETRi8": {
+          "type": "testimonial",
+          "settings": {
+            "quote": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+            "author": "TEst 1"
+          }
+        },
+        "testimonial_XQb9tT": {
+          "type": "testimonial",
+          "settings": {
+            "quote": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+            "author": "Test 2"
+          }
+        },
+        "testimonial_DrmFzc": {
+          "type": "testimonial",
+          "settings": {
+            "quote": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+            "author": "test3"
+          }
+        },
+        "testimonial_7Vgx77": {
+          "type": "testimonial",
+          "settings": {
+            "quote": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+            "author": "test 4"
+          }
+        },
+        "testimonial_XYtXnx": {
+          "type": "testimonial",
+          "settings": {
+            "quote": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+            "author": "John Doe"
+          }
+        },
+        "testimonial_eyyHEr": {
+          "type": "testimonial",
+          "settings": {
+            "quote": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+            "author": "test 4"
+          }
+        }
+      },
+      "block_order": [
+        "testimonial_UETRi8",
+        "testimonial_XQb9tT",
+        "testimonial_DrmFzc",
+        "testimonial_7Vgx77",
+        "testimonial_XYtXnx",
+        "testimonial_eyyHEr"
+      ],
+      "settings": {
+        "title": "WHAT OUR CLIENT SAY",
+        "subtitle": "Neque, Pulvinar Vestibulum Non Aliquam."
+      }
+    }
+  },
+  "order": [
+    "image_banner",
+    "featured_collection_RbcdHD",
+    "multirow_fYUxWd",
+    "collapsible_content_TNjJPe",
+    "rich_text_PGzhdD",
+    "testimonial_section_piMzLk"
+  ]
+}

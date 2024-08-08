@@ -1,0 +1,256 @@
+{% schema %}
+{
+  "name": "Logo Slider",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Trusted By"
+    },
+    {
+      "type": "range",
+      "id": "logo_opacity",
+      "min": 20,
+      "max": 100,
+      "step": 10,
+      "unit": "%",
+      "label": "Logo Opacity",
+      "default": 100
+    },
+    {
+      "type": "range",
+      "id": "autoplay_speed",
+      "min": 3,
+      "max": 10,
+      "step": 1,
+      "unit": "sec",
+      "label": "Autoplay Speed (Mobile)",
+      "default": 5
+    }
+  ],
+  "blocks": [
+    {
+      "type": "logo",
+      "name": "Logo",
+      "limit": 5,
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "logo",
+          "label": "Logo Image"
+        },
+        {
+          "type": "url",
+          "id": "link",
+          "label": "Logo Link"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Logo Slider",
+      "blocks": [
+        {"type": "logo"},
+        {"type": "logo"},
+        {"type": "logo"},
+        {"type": "logo"},
+        {"type": "logo"}
+      ]
+    }
+  ]
+}
+{% endschema %}
+
+<style>
+  .logo-slider {
+    background-color: #76BDDC;
+    padding: 30px 0;
+    position: relative;
+  }
+  .logo-slider__heading {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 24px;
+    font-weight: bold;
+    color: #fff;
+  }
+  .logo-slider__container {
+    overflow: hidden;
+  }
+  .logo-slider__wrapper {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    transition: transform 0.5s ease;
+  }
+  .logo-slider__item {
+    flex: 0 0 20%;
+    padding: 0 10px;
+    text-align: center;
+  }
+  .logo-slider__image {
+    max-width: 100%;
+    height: auto;
+    transition: opacity 0.3s ease;
+    object-fit: contain;
+    max-height: 80px;
+  }
+  .logo-slider__image:hover {
+    opacity: 0.8;
+  }
+  @media screen and (max-width: 767px) {
+    .logo-slider__item {
+      flex: 0 0 100%;
+    }
+    .logo-slider__nav {
+      display: flex;
+      justify-content: center;
+      margin-top: 20px;
+    }
+    .logo-slider__nav-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background-color: #fff;
+      margin: 0 5px;
+      cursor: pointer;
+      opacity: 0.5;
+    }
+    .logo-slider__nav-dot.active {
+      opacity: 1;
+    }
+  }
+</style>
+
+<div class="logo-slider">
+  <div class="page-width">
+    <h2 class="logo-slider__heading">{{ section.settings.heading }}</h2>
+    <div class="logo-slider__container">
+      <div class="logo-slider__wrapper">
+        {% for block in section.blocks %}
+          {% if block.settings.logo != blank %}
+            <div class="logo-slider__item">
+              {% if block.settings.link != blank %}
+                <a href="{{ block.settings.link }}">
+              {% endif %}
+              <img
+                src="{{ block.settings.logo | img_url: '200x' }}"
+                alt="{{ block.settings.logo.alt | escape }}"
+                class="logo-slider__image"
+                style="opacity: {{ section.settings.logo_opacity | divided_by: 100.0 }};"
+                loading="lazy"
+                width="{{ block.settings.logo.width }}"
+                height="{{ block.settings.logo.height }}"
+              >
+              {% if block.settings.link != blank %}
+                </a>
+              {% endif %}
+            </div>
+          {% endif %}
+        {% endfor %}
+      </div>
+    </div>
+    <div class="logo-slider__nav"></div>
+  </div>
+</div>
+
+{% if section.blocks.size == 0 %}
+  <div class="placeholder-noblocks">
+    <p>Add logo blocks to display your trusted partners or clients.</p>
+  </div>
+{% endif %}
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const wrapper = document.querySelector('.logo-slider__wrapper');
+    const items = document.querySelectorAll('.logo-slider__item');
+    const nav = document.querySelector('.logo-slider__nav');
+    let currentIndex = 0;
+    const autoplaySpeed = {{ section.settings.autoplay_speed | times: 1000 }};
+    let autoplayInterval;
+
+    function initMobileSlider() {
+      nav.innerHTML = '';
+      items.forEach((_, index) => {
+        const dot = document.createElement('div');
+        dot.classList.add('logo-slider__nav-dot');
+        dot.addEventListener('click', () => goToSlide(index));
+        nav.appendChild(dot);
+      });
+
+      updateSlider();
+      startAutoplay();
+    }
+
+    function updateSlider() {
+      wrapper.style.transform = `translateX(-${currentIndex * 100}%)`;
+      document.querySelectorAll('.logo-slider__nav-dot').forEach((dot, index) => {
+        dot.classList.toggle('active', index === currentIndex);
+      });
+    }
+
+    function goToSlide(index) {
+      currentIndex = index;
+      updateSlider();
+    }
+
+    function nextSlide() {
+      currentIndex = (currentIndex + 1) % items.length;
+      updateSlider();
+    }
+
+    function startAutoplay() {
+      if (autoplayInterval) clearInterval(autoplayInterval);
+      autoplayInterval = setInterval(nextSlide, autoplaySpeed);
+    }
+
+    function stopAutoplay() {
+      if (autoplayInterval) clearInterval(autoplayInterval);
+    }
+
+    function resetDesktopLayout() {
+      wrapper.style.transform = '';
+      nav.innerHTML = '';
+      stopAutoplay();
+    }
+
+    function handleResize() {
+      if (window.innerWidth <= 767) {
+        if (nav.children.length === 0) {
+          initMobileSlider();
+        }
+      } else {
+        resetDesktopLayout();
+      }
+    }
+
+    handleResize();
+    window.addEventListener('resize', handleResize);
+
+    // Touch events for mobile
+    let touchStartX = 0;
+    let touchEndX = 0;
+
+    wrapper.addEventListener('touchstart', e => {
+      touchStartX = e.changedTouches[0].screenX;
+      stopAutoplay();
+    }, {passive: true});
+
+    wrapper.addEventListener('touchend', e => {
+      touchEndX = e.changedTouches[0].screenX;
+      handleSwipe();
+      startAutoplay();
+    }, {passive: true});
+
+    function handleSwipe() {
+      if (touchStartX - touchEndX > 50) {
+        nextSlide();
+      } else if (touchEndX - touchStartX > 50) {
+        currentIndex = (currentIndex - 1 + items.length) % items.length;
+        updateSlider();
+      }
+    }
+  });
+</script>

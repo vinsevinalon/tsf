@@ -1,0 +1,139 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "padding_top": 28,
+        "padding_bottom": 28
+      }
+    },
+    "image_banner_9zqGTz": {
+      "type": "image-banner",
+      "settings": {
+        "image": "shopify:\/\/shop_images\/WHY_CHOOSE_US_1_7c06f450-dda0-4ad4-b12f-1f0e6ff99e91.png",
+        "image_overlay_opacity": 0,
+        "image_height": "adapt",
+        "desktop_content_position": "middle-center",
+        "show_text_box": true,
+        "desktop_content_alignment": "center",
+        "color_scheme": "",
+        "image_behavior": "none",
+        "mobile_content_alignment": "center",
+        "stack_images_on_mobile": true,
+        "show_text_below": true
+      }
+    },
+    "172227887096f3b5b4": {
+      "type": "apps",
+      "settings": {
+        "include_margins": true
+      }
+    },
+    "multicolumn_rbwBAx": {
+      "type": "multicolumn",
+      "blocks": {
+        "column_waWPf3": {
+          "type": "column",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/man-signing-for-shipping-box.jpg",
+            "title": "<strong>SHORT LEAD TIMES<\/strong>",
+            "text": "<p>On average, we ship out your order within <strong>2-4 weeks<\/strong>.<\/p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_xaHkAk": {
+          "type": "column",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/029_1666_copy.jpg",
+            "title": "<strong>LOW MINIMUMS<\/strong>",
+            "text": "<p><strong>100 pairs <\/strong>per unique design, size, and colorway. Need less or more? Just ask.<\/p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_KKPep7": {
+          "type": "column",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/AEM_5111_copy.jpg",
+            "title": "<strong>FAMILY OWNED + USA MADE<\/strong>",
+            "text": "<p>Enjoy free US ground shipping; pay only for expedited or international delivery.<\/p>",
+            "link_label": "",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "column_waWPf3",
+        "column_xaHkAk",
+        "column_KKPep7"
+      ],
+      "settings": {
+        "title": "",
+        "heading_size": "h1",
+        "image_width": "full",
+        "image_ratio": "adapt",
+        "columns_desktop": 3,
+        "column_alignment": "left",
+        "background_style": "none",
+        "button_label": "",
+        "button_link": "",
+        "color_scheme": "scheme-5",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "rich_text_QHJb73": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_iYXEjp": {
+          "type": "heading",
+          "settings": {
+            "heading": "<strong>Why Choose The Sock Factory?<\/strong>",
+            "heading_size": "h0"
+          }
+        },
+        "text_j87i3f": {
+          "type": "text",
+          "settings": {
+            "text": "<p><strong>Short Lead Times<\/strong><br\/>We ensure quick turnaround times, with most orders shipping within 2-4 weeks, so you receive your custom socks right on time.<\/p><p><strong>Low Minimums<\/strong><br\/>We offer low minimum order quantities, starting at just 100 pairs per design, making custom socks accessible for everyone.<\/p><p><strong>Family-Owned & USA Made<\/strong><br\/>As a family-owned business with generations of experience, we proudly manufacture all our socks in the USA, guaranteeing top quality and supporting local jobs.<\/p><p><strong>Competitive Pricing<\/strong><br\/>We offer high-quality products at competitive prices, ensuring you get the best value for your investment.<\/p><p><strong>Unmatched Quality Control<\/strong><br\/>Our rigorous quality checks ensure every pair meets our high standards for durability, comfort, and craftsmanship.<\/p><p><strong>Innovative Designs<\/strong><br\/>Our in-house design team stays ahead of trends, creating innovative and stylish designs that make your brand stand out.<\/p><p><strong>Personalized Customer Service<\/strong><br\/>We believe in building strong relationships with our clients. Our dedicated support team is here to ensure a smooth and personalized experience from start to finish.<\/p>"
+          }
+        },
+        "button_rRXiXf": {
+          "type": "button",
+          "settings": {
+            "button_label": "Start Your Project",
+            "button_link": "shopify:\/\/pages\/start-your-project",
+            "button_style_secondary": false,
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_secondary_2": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_iYXEjp",
+        "text_j87i3f",
+        "button_rRXiXf"
+      ],
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
+    }
+  },
+  "order": [
+    "main",
+    "image_banner_9zqGTz",
+    "172227887096f3b5b4",
+    "multicolumn_rbwBAx",
+    "rich_text_QHJb73"
+  ]
+}

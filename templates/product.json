@@ -15,11 +15,6 @@
           "settings": {
           }
         },
-        "price": {
-          "type": "price",
-          "settings": {
-          }
-        },
         "variant_picker": {
           "type": "variant_picker",
           "settings": {
@@ -27,15 +22,10 @@
             "swatch_shape": "circle"
           }
         },
-        "quantity_selector": {
-          "type": "quantity_selector",
-          "settings": {
-          }
-        },
         "buy_buttons": {
           "type": "buy_buttons",
           "settings": {
-            "show_dynamic_checkout": true,
+            "show_dynamic_checkout": false,
             "show_gift_card_recipient": true
           }
         },
@@ -44,30 +34,40 @@
           "settings": {
           }
         },
-        "share": {
-          "type": "share",
+        "rating_rBTGHH": {
+          "type": "rating",
           "settings": {
-            "share_label": "Share"
+          }
+        },
+        "icon_with_text_xMk3Gc": {
+          "type": "icon-with-text",
+          "settings": {
+            "layout": "vertical",
+            "icon_1": "check_mark",
+            "heading_1": "<strong>FREE Designer Mockups<\/strong>",
+            "icon_2": "check_mark",
+            "heading_2": "<strong>FREE Samples (past client designs)<\/strong>",
+            "icon_3": "check_mark",
+            "heading_3": "<strong>FREE Custom Branded Retail Packaging<\/strong>"
           }
         }
       },
       "block_order": [
         "vendor",
         "title",
-        "price",
         "variant_picker",
-        "quantity_selector",
         "buy_buttons",
         "description",
-        "share"
+        "rating_rBTGHH",
+        "icon_with_text_xMk3Gc"
       ],
       "settings": {
         "enable_sticky_info": true,
         "color_scheme": "scheme-1",
-        "media_size": "large",
+        "media_size": "small",
         "constrain_to_viewport": true,
-        "media_fit": "contain",
-        "gallery_layout": "stacked",
+        "media_fit": "cover",
+        "gallery_layout": "thumbnail_slider",
         "media_position": "left",
         "image_zoom": "lightbox",
         "mobile_thumbnails": "hide",
@@ -77,15 +77,183 @@
         "padding_bottom": 12
       }
     },
+    "product_features_meWR9a": {
+      "type": "product-features",
+      "blocks": {
+        "feature_HWRFkH": {
+          "type": "feature",
+          "settings": {
+            "icon": "shopify:\/\/shop_images\/flower-tulip.png",
+            "text": "ALWAYS MADE IN THE USA"
+          }
+        },
+        "feature_WiY8VG": {
+          "type": "feature",
+          "settings": {
+            "icon": "shopify:\/\/shop_images\/plane.png",
+            "text": "ONLY PREMIUM MATERIALS"
+          }
+        },
+        "feature_4D669U": {
+          "type": "feature",
+          "settings": {
+            "icon": "shopify:\/\/shop_images\/physics.png",
+            "text": "HUNDREDS OF 5-STAR REVIEWS"
+          }
+        },
+        "feature_9CwdMC": {
+          "type": "feature",
+          "settings": {
+            "icon": "shopify:\/\/shop_images\/chart-tree.png",
+            "text": "FREE DESIGNER MOCKUPS"
+          }
+        },
+        "feature_twXtyC": {
+          "type": "feature",
+          "settings": {
+            "icon": "shopify:\/\/shop_images\/handshake.png",
+            "text": "ALL INCLUSIVE PRICING"
+          }
+        },
+        "feature_prwFM7": {
+          "type": "feature",
+          "settings": {
+            "icon": "shopify:\/\/shop_images\/glass-cheers.png",
+            "text": "FREE US GROUND SHIPPING"
+          }
+        }
+      },
+      "block_order": [
+        "feature_HWRFkH",
+        "feature_WiY8VG",
+        "feature_4D669U",
+        "feature_9CwdMC",
+        "feature_twXtyC",
+        "feature_prwFM7"
+      ],
+      "settings": {
+        "heading": "WHY CHOOSE THE SOCK FACTORY?",
+        "heading_size": "h2",
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
+    },
+    "trusted_logos_BwnC4T": {
+      "type": "trusted-logos",
+      "blocks": {
+        "logo_t4iFpa": {
+          "type": "logo",
+          "settings": {
+            "logo": "shopify:\/\/shop_images\/3_f0d41549-0616-457e-a48a-7cac79c473ef.png",
+            "link": ""
+          }
+        },
+        "logo_9AAGqq": {
+          "type": "logo",
+          "settings": {
+            "logo": "shopify:\/\/shop_images\/1_3f0e4d33-cd94-4385-b94d-191bc42e7d3c.png",
+            "link": ""
+          }
+        },
+        "logo_AxrrVL": {
+          "type": "logo",
+          "settings": {
+            "logo": "shopify:\/\/shop_images\/2_84c61191-0ff6-4243-a624-162f0f904a8a.png",
+            "link": ""
+          }
+        },
+        "logo_mmxyFY": {
+          "type": "logo",
+          "settings": {
+            "logo": "shopify:\/\/shop_images\/5_1c12ffee-881d-4fc1-857c-615a1d591aef.png",
+            "link": ""
+          }
+        },
+        "logo_JLdrL7": {
+          "type": "logo",
+          "settings": {
+            "logo": "shopify:\/\/shop_images\/4_6ee5dfed-f0a1-43e5-81c2-de772deda353.png",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "logo_t4iFpa",
+        "logo_9AAGqq",
+        "logo_AxrrVL",
+        "logo_mmxyFY",
+        "logo_JLdrL7"
+      ],
+      "settings": {
+        "heading": "Trusted By",
+        "logo_opacity": 100,
+        "autoplay_speed": 5
+      }
+    },
+    "image_with_text_sliding_fzTmEn": {
+      "type": "image-with-text-sliding",
+      "blocks": {
+        "slide_AyPH3f": {
+          "type": "slide",
+          "settings": {
+            "heading": "OUR PROCESS",
+            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>",
+            "button_label": "Button label",
+            "button_link": ""
+          }
+        },
+        "slide_9AmdGb": {
+          "type": "slide",
+          "settings": {
+            "heading": "OUR 1% SUPPLY CHAIN",
+            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>",
+            "button_label": "Button label",
+            "button_link": ""
+          }
+        },
+        "slide_mjAAtD": {
+          "type": "slide",
+          "settings": {
+            "heading": "WHY OUR SOCKS VS OTHER PRODUCTS?",
+            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>",
+            "button_label": "Button label",
+            "button_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "slide_AyPH3f",
+        "slide_9AmdGb",
+        "slide_mjAAtD"
+      ],
+      "disabled": true,
+      "settings": {
+        "height": "medium",
+        "desktop_image_width": "medium",
+        "layout": "image_first",
+        "desktop_content_position": "top",
+        "desktop_content_alignment": "left",
+        "content_layout": "no-overlap",
+        "color_scheme": "background-2",
+        "mobile_content_alignment": "left",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
     "related-products": {
       "type": "related-products",
+      "disabled": true,
       "settings": {
         "heading": "You may also like",
-        "heading_size": "h2",
+        "heading_size": "h0",
         "products_to_show": 4,
         "columns_desktop": 4,
         "color_scheme": "scheme-1",
-        "image_ratio": "square",
+        "image_ratio": "portrait",
         "image_shape": "default",
         "show_secondary_image": true,
         "show_vendor": false,
@@ -94,10 +262,42 @@
         "padding_top": 36,
         "padding_bottom": 28
       }
+    },
+    "featured_collection_K6kDRV": {
+      "type": "featured-collection",
+      "settings": {
+        "title": "<strong>RELATED PRODUCTS<\/strong>",
+        "heading_size": "h1",
+        "description": "",
+        "show_description": false,
+        "description_style": "body",
+        "collection": "frontpage",
+        "products_to_show": 4,
+        "columns_desktop": 4,
+        "full_width": false,
+        "show_view_all": true,
+        "view_all_style": "solid",
+        "enable_desktop_slider": false,
+        "color_scheme": "",
+        "image_ratio": "adapt",
+        "image_shape": "default",
+        "show_secondary_image": false,
+        "show_vendor": false,
+        "show_rating": false,
+        "quick_add": "none",
+        "columns_mobile": "2",
+        "swipe_on_mobile": false,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
     }
   },
   "order": [
     "main",
-    "related-products"
+    "product_features_meWR9a",
+    "trusted_logos_BwnC4T",
+    "image_with_text_sliding_fzTmEn",
+    "related-products",
+    "featured_collection_K6kDRV"
   ]
 }

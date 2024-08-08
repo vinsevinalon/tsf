@@ -6,21 +6,21 @@
         "heading": {
           "type": "heading",
           "settings": {
-            "heading": "<strong>Performance Athletic Socks<\/strong>",
+            "heading": "",
             "heading_size": "h0"
           }
         },
         "text_iJ7Mqq": {
           "type": "text",
           "settings": {
-            "text": "At lacus vitae nulla sagittis scelerisque nisl. Pellentesque duis cursus vestibulum, facilisi ac, sed faucibus.",
+            "text": "",
             "text_style": "body"
           }
         },
         "button": {
           "type": "buttons",
           "settings": {
-            "button_label_1": "START YOUR PROJECT >",
+            "button_label_1": "",
             "button_link_1": "shopify:\/\/collections\/all",
             "button_style_secondary_1": true,
             "button_label_2": "",
@@ -35,10 +35,10 @@
         "button"
       ],
       "settings": {
-        "image": "shopify:\/\/shop_images\/Nate_Banks_003_raderproductions.jpg",
-        "image_overlay_opacity": 40,
-        "image_height": "large",
-        "desktop_content_position": "bottom-center",
+        "image": "shopify:\/\/shop_images\/Copy_of_Untitled_1200_x_1600_px_1200_x_1700_px_2800_x_1000_px.png",
+        "image_overlay_opacity": 0,
+        "image_height": "adapt",
+        "desktop_content_position": "middle-center",
         "show_text_box": false,
         "desktop_content_alignment": "center",
         "color_scheme": "scheme-3",
@@ -46,6 +46,61 @@
         "mobile_content_alignment": "center",
         "stack_images_on_mobile": false,
         "show_text_below": false
+      }
+    },
+    "trusted_logos_BNp7K7": {
+      "type": "trusted-logos",
+      "blocks": {
+        "logo_RhX3b3": {
+          "type": "logo",
+          "settings": {
+            "logo": "shopify:\/\/shop_images\/3_6219cd70-0a8c-4124-975b-b16fad5ed2d7.png",
+            "link": ""
+          }
+        },
+        "logo_Hfpweb": {
+          "type": "logo",
+          "settings": {
+            "logo": "shopify:\/\/shop_images\/1_7daa2075-52ee-4ba5-967e-1d68e67d658d.png",
+            "link": ""
+          }
+        },
+        "logo_dYD8J6": {
+          "type": "logo",
+          "settings": {
+            "logo": "shopify:\/\/shop_images\/2_5b982b45-997a-45ef-8275-94e9c11a5833.png",
+            "link": ""
+          }
+        },
+        "logo_bCUBMP": {
+          "type": "logo",
+          "settings": {
+            "logo": "shopify:\/\/shop_images\/5_39f06d19-e420-4994-a74f-3d197243e0ae.png",
+            "link": ""
+          }
+        },
+        "logo_H4QCNB": {
+          "type": "logo",
+          "settings": {
+            "logo": "shopify:\/\/shop_images\/4_116dfcee-e856-489a-b5b6-e1eb3216cd7b.png",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "logo_RhX3b3",
+        "logo_Hfpweb",
+        "logo_dYD8J6",
+        "logo_bCUBMP",
+        "logo_H4QCNB"
+      ],
+      "custom_css": [
+
+      ],
+      "settings": {
+        "heading": "TRUSTED BY",
+        "logo_opacity": 100,
+        "autoplay_speed": 5
       }
     },
     "featured_collection_RbcdHD": {
@@ -56,17 +111,17 @@
         "description": "",
         "show_description": false,
         "description_style": "body",
-        "collection": "",
-        "products_to_show": 4,
-        "columns_desktop": 4,
+        "collection": "frontpage",
+        "products_to_show": 6,
+        "columns_desktop": 3,
         "full_width": false,
         "show_view_all": true,
         "view_all_style": "solid",
         "enable_desktop_slider": false,
         "color_scheme": "",
-        "image_ratio": "square",
+        "image_ratio": "adapt",
         "image_shape": "default",
-        "show_secondary_image": false,
+        "show_secondary_image": true,
         "show_vendor": false,
         "show_rating": false,
         "quick_add": "none",
@@ -76,46 +131,66 @@
         "padding_bottom": 36
       }
     },
+    "image_banner_kyXNC6": {
+      "type": "image-banner",
+      "settings": {
+        "image": "shopify:\/\/shop_images\/WHY_CHOOSE_US_1_8f05f8b5-2d34-4f3d-ab09-44b9b6297761.png",
+        "image_overlay_opacity": 0,
+        "image_height": "adapt",
+        "desktop_content_position": "middle-center",
+        "show_text_box": true,
+        "desktop_content_alignment": "center",
+        "color_scheme": "",
+        "image_behavior": "none",
+        "mobile_content_alignment": "center",
+        "stack_images_on_mobile": true,
+        "show_text_below": true
+      }
+    },
     "multirow_fYUxWd": {
       "type": "multirow",
       "blocks": {
         "row_rmKf6p": {
           "type": "row",
           "settings": {
+            "image": "shopify:\/\/shop_images\/1_f62ba3d7-8d9b-48ae-bd5c-a28ed29e8660.png",
             "caption": "",
             "heading": "<strong>ORDER CUSTOM SOCKS IN BULK<\/strong>",
-            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>",
-            "button_label": "Button label",
+            "text": "<p>Simplify your purchasing process by ordering custom socks in bulk. Tailored to meet your brand's needs, our socks are perfect for corporate events, team uniforms, or retail. Click to learn more.<\/p>",
+            "button_label": "LEARN MORE",
             "button_link": ""
           }
         },
         "row_8zTPKw": {
           "type": "row",
           "settings": {
+            "image": "shopify:\/\/shop_images\/2_64a5f7c4-0480-4c96-b1a8-d1cdded0a639.png",
             "caption": "",
             "heading": "<strong>COMPLETELY CUSTOMIZABLE<\/strong>",
-            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>",
-            "button_label": "Button label",
+            "text": "<p>From design to delivery, your custom socks are crafted exactly to your specifications. Choose colors, patterns, and logos to create the perfect match for your brand. Learn more about how easy it is to get started.<\/p>",
+            "button_label": "LEARN MORE",
             "button_link": ""
           }
         },
         "row_y4yWbE": {
           "type": "row",
           "settings": {
+            "image": "shopify:\/\/shop_images\/3_0cfb46c8-6076-4e0d-a021-1b22cfbba373.png",
             "caption": "",
-            "heading": "<strong>PREMIUM USA-MADE QUALITY<\/strong>",
-            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>",
-            "button_label": "Button label",
+            "heading": "<strong>CRAFTED IN THE USA<\/strong>",
+            "text": "<p>Proudly made in the NC, our socks represent the highest standards of craftsmanship. Built for comfort, durability, and style, our products are a testament to American quality. Explore our range.<\/p>",
+            "button_label": "LEARN MORE",
             "button_link": ""
           }
         },
         "row_WXFLKH": {
           "type": "row",
           "settings": {
+            "image": "shopify:\/\/shop_images\/4_6bb428b0-3c21-455f-a5a6-56f914f26383.png",
             "caption": "",
             "heading": "<strong>WHITE GLOVE SERVICE<\/strong>",
-            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>",
-            "button_label": "Button label",
+            "text": "<p>Experience unmatched customer service with our white glove approach. From design consultation to final delivery, we’re with you every step of the way, ensuring a seamless experience. Find out more about our premium service.<\/p>",
+            "button_label": "LEARN MORE",
             "button_link": ""
           }
         }
@@ -127,10 +202,10 @@
         "row_WXFLKH"
       ],
       "settings": {
-        "image_height": "medium",
+        "image_height": "adapt",
         "desktop_image_width": "medium",
         "heading_size": "h1",
-        "text_style": "body",
+        "text_style": "subtitle",
         "button_style": "secondary",
         "desktop_content_position": "middle",
         "desktop_content_alignment": "left",
@@ -145,44 +220,54 @@
     "collapsible_content_TNjJPe": {
       "type": "collapsible-content",
       "blocks": {
+        "collapsible_row_hTqNR6": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "How it works",
+            "icon": "check_mark",
+            "row_content": "<p>Our team handles every step of the process for you. From design to production, once your design is approved, it’s knitted, packaged, and shipped to any destination worldwide. We ensure a seamless experience from start to finish.<\/p>",
+            "page": ""
+          }
+        },
         "collapsible_row_NwpQb7": {
           "type": "collapsible_row",
           "settings": {
-            "heading": "Collapsible row",
+            "heading": "Family-Owned, USA-Made",
             "icon": "check_mark",
-            "row_content": "",
+            "row_content": "<p>As a family-owned business spanning three generations, we proudly manufacture our socks in the USA. By going factory direct, you benefit from superior quality, personalized service, and competitive pricing, all from a team that truly cares about your success.<\/p>",
             "page": ""
           }
         },
         "collapsible_row_QzrFqb": {
           "type": "collapsible_row",
           "settings": {
-            "heading": "Collapsible row",
+            "heading": "Ordering Custom Logo Socks in bulk has its benefits",
             "icon": "check_mark",
-            "row_content": "",
+            "row_content": "<p>Enjoy cost savings and streamlined logistics when you order custom logo socks in bulk. Perfect for large events, corporate giveaways, and retail.<\/p>",
             "page": ""
           }
         },
         "collapsible_row_ALcHwh": {
           "type": "collapsible_row",
           "settings": {
-            "heading": "Collapsible row",
+            "heading": "Effortless Bulk Customization",
             "icon": "check_mark",
-            "row_content": "",
+            "row_content": "<p>We simplify the process of ordering custom-designed socks in bulk. Our team is here to guide you every step of the way, ensuring a seamless experience.<\/p>",
             "page": ""
           }
         },
         "collapsible_row_AwAdWX": {
           "type": "collapsible_row",
           "settings": {
-            "heading": "Collapsible row",
+            "heading": "Why order The Sock Factory Wholesale?",
             "icon": "check_mark",
-            "row_content": "",
+            "row_content": "<p>Partner with us for competitive wholesale pricing, reliable delivery, and unparalleled product quality. Your satisfaction is our top priority.<\/p>",
             "page": ""
           }
         }
       },
       "block_order": [
+        "collapsible_row_hTqNR6",
         "collapsible_row_NwpQb7",
         "collapsible_row_QzrFqb",
         "collapsible_row_ALcHwh",
@@ -190,12 +275,12 @@
       ],
       "settings": {
         "caption": "",
-        "heading": "<strong>Collapsible content<\/strong>",
+        "heading": "<strong>WHY WORK WITH THE SOCK FACTORY?<\/strong>",
         "heading_size": "h1",
         "heading_alignment": "center",
         "layout": "none",
-        "color_scheme": "",
-        "container_color_scheme": "",
+        "color_scheme": "scheme-1",
+        "container_color_scheme": "scheme-1",
         "open_first_collapsible_row": false,
         "image_ratio": "adapt",
         "desktop_layout": "image_second",
@@ -239,7 +324,7 @@
       "settings": {
         "desktop_content_position": "center",
         "content_alignment": "center",
-        "color_scheme": "",
+        "color_scheme": "scheme-1",
         "full_width": true,
         "padding_top": 40,
         "padding_bottom": 52
@@ -251,63 +336,84 @@
         "testimonial_UETRi8": {
           "type": "testimonial",
           "settings": {
-            "quote": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-            "author": "TEst 1"
+            "testimonial": "<p>“The Sock Factory’s customization options allowed us to create unique, branded socks that our clients love. Their quality and service are top-notch!”<\/p>",
+            "author_name": "Sarah Wilson, Business Owner",
+            "author_title": "",
+            "author_image": "shopify:\/\/shop_images\/AEM_4430.jpg"
           }
         },
-        "testimonial_XQb9tT": {
+        "testimonial_teNAVH": {
           "type": "testimonial",
           "settings": {
-            "quote": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-            "author": "Test 2"
-          }
-        },
-        "testimonial_DrmFzc": {
-          "type": "testimonial",
-          "settings": {
-            "quote": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-            "author": "test3"
-          }
-        },
-        "testimonial_7Vgx77": {
-          "type": "testimonial",
-          "settings": {
-            "quote": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-            "author": "test 4"
+            "testimonial": "<p>“Our experience with The Sock Factory has been fantastic. The socks are high quality, and the ordering process is simple and efficient.”<\/p>",
+            "author_name": "Michael Brown, Corporate Partner",
+            "author_title": "",
+            "author_image": "shopify:\/\/shop_images\/TSF_web_dt_1.jpg"
           }
         },
         "testimonial_XYtXnx": {
           "type": "testimonial",
           "settings": {
-            "quote": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-            "author": "John Doe"
+            "testimonial": "<p>“The turnaround time and attention to detail from The Sock Factory exceeded our expectations. We highly recommend them for any custom sock needs.”<\/p>",
+            "author_name": "Laura Thompson, Event Coordinator",
+            "author_title": "",
+            "author_image": "shopify:\/\/shop_images\/knittingroom_1024x1024_9b1da910-e75c-48cc-b4ce-d002a46c3513.jpg"
           }
         },
         "testimonial_eyyHEr": {
           "type": "testimonial",
           "settings": {
-            "quote": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-            "author": "test 4"
+            "testimonial": "<p>“We’ve been ordering custom socks from The Sock Factory for years. Their attention to detail and quality is unmatched!”<\/p>",
+            "author_name": "Jane Smith, Satisfied Customer",
+            "author_title": "",
+            "author_image": "shopify:\/\/shop_images\/fam.jpg"
+          }
+        },
+        "testimonial_cbLGmK": {
+          "type": "testimonial",
+          "settings": {
+            "testimonial": "<p>“The customer service at The Sock Factory is outstanding. They made the entire process easy and delivered exactly what we needed.”<\/p>",
+            "author_name": "John Doe",
+            "author_title": "Mark Johnson, Happy Client",
+            "author_image": "shopify:\/\/shop_images\/knittingroom_1024x1024_9b1da910-e75c-48cc-b4ce-d002a46c3513.jpg"
+          }
+        },
+        "testimonial_MGHtMJ": {
+          "type": "testimonial",
+          "settings": {
+            "testimonial": "<p>“Working with The Sock Factory has been a game-changer for our promotional events. Their socks are always a hit!”<\/p>",
+            "author_name": "Emily Davis, Loyal Customer",
+            "author_title": "",
+            "author_image": "shopify:\/\/shop_images\/knittingroom.jpg"
           }
         }
       },
       "block_order": [
         "testimonial_UETRi8",
-        "testimonial_XQb9tT",
-        "testimonial_DrmFzc",
-        "testimonial_7Vgx77",
+        "testimonial_teNAVH",
         "testimonial_XYtXnx",
-        "testimonial_eyyHEr"
+        "testimonial_eyyHEr",
+        "testimonial_cbLGmK",
+        "testimonial_MGHtMJ"
       ],
       "settings": {
         "title": "WHAT OUR CLIENT SAY",
-        "subtitle": "Neque, Pulvinar Vestibulum Non Aliquam."
+        "title_bold": true,
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "heading_size": "h1",
+        "color_scheme": "scheme-3",
+        "full_width": true,
+        "padding_top": 36,
+        "padding_bottom": 52
       }
     }
   },
   "order": [
     "image_banner",
+    "trusted_logos_BNp7K7",
     "featured_collection_RbcdHD",
+    "image_banner_kyXNC6",
     "multirow_fYUxWd",
     "collapsible_content_TNjJPe",
     "rich_text_PGzhdD",

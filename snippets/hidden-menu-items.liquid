@@ -1,0 +1,42 @@
+{% comment %}
+  Hidden Menu Items (Based on Span Text)
+
+  This snippet modifies the navigation menu to hide specific items on desktop based on their span text.
+
+  Usage:
+  1. Create a snippet called 'hidden-menu-items.liquid' with this code.
+  2. Include this snippet in your navigation template (often header.liquid or navigation.liquid).
+  3. Pass your menu object to this snippet.
+
+  Example:
+  {% render 'hidden-menu-items', menu: section.settings.main_menu %}
+{% endcomment %}
+
+{% assign hidden_titles = 'START YOUR PROJECT' | split: ',' %}
+
+<style>
+  @media screen and (min-width: 768px) {
+    {% for title in hidden_titles %}
+      .desktop-hide-{{ title | handle }} {
+        display: none !important;
+      }
+    {% endfor %}
+  }
+</style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    var hiddenTitles = {{ hidden_titles | json }};
+    var menuItems = document.querySelectorAll('.header__menu-item');
+
+    menuItems.forEach(function(item) {
+      var span = item.querySelector('span');
+      if (span) {
+        var title = span.textContent.trim();
+        if (hiddenTitles.includes(title)) {
+          item.classList.add('desktop-hide-' + title.toLowerCase().replace(/\s+/g, '-'));
+        }
+      }
+    });
+  });
+</script>

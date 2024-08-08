@@ -1,20 +1,54 @@
 {
   "sections": {
-    "17230601199c7af037": {
-      "type": "apps",
+    "image_banner_wWe3b9": {
+      "type": "image-banner",
       "blocks": {
-        "powerful_form_builder_app_block_9Xjqhf": {
-          "type": "shopify:\/\/apps\/powerful-form-builder\/blocks\/app-block\/e4bcb1eb-35b2-42e6-bc37-bfe0e1542c9d",
+        "heading_H64ynz": {
+          "type": "heading",
+          "disabled": true,
           "settings": {
-            "shortcode": "<div class=\"globo-formbuilder\" data-id=\"NTAzNjE=\"><\/div>"
+            "heading": "Image banner",
+            "heading_size": "h1"
+          }
+        },
+        "text_kJxYjH": {
+          "type": "text",
+          "disabled": true,
+          "settings": {
+            "text": "Give customers details about the banner image(s) or content on the template.",
+            "text_style": "body"
+          }
+        },
+        "buttons_nkVcGP": {
+          "type": "buttons",
+          "disabled": true,
+          "settings": {
+            "button_label_1": "Button label",
+            "button_link_1": "",
+            "button_style_secondary_1": false,
+            "button_label_2": "Button label",
+            "button_link_2": "",
+            "button_style_secondary_2": false
           }
         }
       },
       "block_order": [
-        "powerful_form_builder_app_block_9Xjqhf"
+        "heading_H64ynz",
+        "text_kJxYjH",
+        "buttons_nkVcGP"
       ],
       "settings": {
-        "include_margins": true
+        "image": "shopify:\/\/shop_images\/WHY_CHOOSE_US_1_854c9d7c-67f8-4fce-84c1-4c9a86171938.png",
+        "image_overlay_opacity": 0,
+        "image_height": "adapt",
+        "desktop_content_position": "middle-center",
+        "show_text_box": true,
+        "desktop_content_alignment": "center",
+        "color_scheme": "",
+        "image_behavior": "none",
+        "mobile_content_alignment": "center",
+        "stack_images_on_mobile": true,
+        "show_text_below": true
       }
     },
     "main": {
@@ -64,6 +98,7 @@
         "column_KKPep7",
         "column_xaHkAk"
       ],
+      "disabled": true,
       "settings": {
         "title": "",
         "heading_size": "h1",
@@ -123,6 +158,7 @@
         "row_FbzcN7",
         "row_cCMVLx"
       ],
+      "disabled": true,
       "settings": {
         "image_height": "medium",
         "desktop_image_width": "medium",
@@ -145,30 +181,33 @@
         "row_J8j7RT": {
           "type": "row",
           "settings": {
-            "caption": "Caption",
-            "heading": "Row",
-            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>",
-            "button_label": "Button label",
+            "image": "shopify:\/\/shop_images\/DALL_E_2024-08-02_15.06.33_-_An_image_of_a_designer_sketching_a_sock_design_possibly_on_a_tablet_or_even_on_a_napkin_to_convey_creativity_and_the_initial_brainstorming_process..webp",
+            "caption": "",
+            "heading": "<strong>1. Convey Your Idea:<\/strong>",
+            "text": "<p>Bring your vision to life with our custom sock design service. Whether you sketch on a tablet or jot down ideas on a napkin, our team will turn your concepts into reality<\/p>",
+            "button_label": "",
             "button_link": ""
           }
         },
         "row_bd6kew": {
           "type": "row",
           "settings": {
-            "caption": "Caption",
-            "heading": "Row",
-            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>",
-            "button_label": "Button label",
+            "image": "shopify:\/\/shop_images\/DALL_E_2024-08-02_15.08.09_-_A_detailed_image_in_the_same_style_as_the_previous_image_focusing_on_an_array_of_fabric_swatches_and_color_palettes._The_image_should_show_various_fa.webp",
+            "caption": "",
+            "heading": "<strong>2. Pick Your Product & Style. <\/strong>",
+            "text": "<p>Work with our expert team to find the perfect product and style for your needs. Browse our digital catalog or consult with a representative to make your selection.<\/p>",
+            "button_label": "",
             "button_link": ""
           }
         },
         "row_WTfKX9": {
           "type": "row",
           "settings": {
-            "caption": "Caption",
-            "heading": "Row",
-            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>",
-            "button_label": "Button label",
+            "image": "shopify:\/\/shop_images\/mbj.jpg",
+            "caption": "",
+            "heading": "<strong>3. We Get To Work.<\/strong>",
+            "text": "<p>Every pair of socks is handled with care, from knitting to packaging. We ensure that your custom order arrives perfectly packaged and ready for distribution.<\/p>",
+            "button_label": "",
             "button_link": ""
           }
         }
@@ -178,7 +217,6 @@
         "row_bd6kew",
         "row_WTfKX9"
       ],
-      "disabled": true,
       "settings": {
         "image_height": "medium",
         "desktop_image_width": "medium",
@@ -188,8 +226,8 @@
         "desktop_content_position": "middle",
         "desktop_content_alignment": "left",
         "image_layout": "alternate-left",
-        "section_color_scheme": "",
-        "row_color_scheme": "",
+        "section_color_scheme": "scheme-2",
+        "row_color_scheme": "scheme-3",
         "mobile_content_alignment": "left",
         "padding_top": 36,
         "padding_bottom": 36
@@ -197,7 +235,7 @@
     }
   },
   "order": [
-    "17230601199c7af037",
+    "image_banner_wWe3b9",
     "main",
     "multicolumn_rbwBAx",
     "multirow_6Xy9KW",

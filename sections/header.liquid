@@ -227,7 +227,8 @@
         </h1>
       {%- endif -%}
     {%- endif -%}
-
+    {% comment %}
+    # HIDE THE ICONS FROM THE HEADER #
     <div class="header__icons{% if section.settings.enable_country_selector or section.settings.enable_language_selector %} header__icons--localization header-localization{% endif %}">
       <div class="desktop-localization-wrapper">
         {%- if section.settings.enable_country_selector and localization.available_countries.size > 1 -%}
@@ -305,8 +306,23 @@
         {%- endif -%}
       </a>
     </div>
+    {% endcomment %}
+
+    {% liquid
+      assign button_text = text | default: 'Start Your Project'
+      assign button_url = url | default: 'https://www.thesockfactory.com/pages/start-your-project'
+      assign button_style = style | default: 'primary'
+      assign button_size = size | default: 'medium'
+      assign button_class = class | default: ''
+      assign hide_on_mobile = hide_on_mobile | default: true
+    %}
+    <div class="header__iconsheader__icons--localization header-localization">
+      <a href="{{ button_url }}" class="button button--{{ button_style }} button--{{ button_size }} {{ button_class }} {% if hide_on_mobile %}hide-on-mobile{% endif %}">
+        {{ button_text }}
+      </a>
+    </div>
+    {% render 'hidden-menu-items', menu: section.settings.main_menu %}
   </header>
-</{% if section.settings.sticky_header_type != 'none' %}sticky-header{% else %}div{% endif %}>
 
 {%- if settings.cart_type == "notification" -%}
   {%- render 'cart-notification', color_scheme: section.settings.color_scheme, desktop_menu_type: section.settings.menu_type_desktop -%}
